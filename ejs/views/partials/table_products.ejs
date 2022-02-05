@@ -1,0 +1,26 @@
+<h1 style="color: rgb(35, 29, 145);">Vista de Productos</h1>
+<div>
+    <% if(products.length > 0) {%>
+        <table class="table table-dark table-striped table-bordered border-dark">
+            <thead>
+              <tr>
+                <th scope="col">Titulo</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Imagen</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% for( product of products ) { %>
+                    <tr>
+                        <th><%= product.title %></th>
+                        <th><%= product.price %></th>
+                        <th><img src="<%= product.thumbnail %>" alt="<%= product.title %>" class="img-thumbnail" style="max-width: 100px; max-height: 100px;"></th>
+                      </tr>
+                <% } %>
+            </tbody>
+          </table>
+    <% }else{ %> 
+        <p class="alert alert-danger">No hay productos</p>
+    <% } %>
+    <button type="button" onclick="location.href='../'" class="btn btn-info">Cargar Productos</button>
+</div>

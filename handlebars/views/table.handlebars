@@ -1,0 +1,28 @@
+<h1 style="color: rgb(35, 29, 145);">Vista de Productos</h1>
+<div>
+    {{#if products}}
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Imagen</th>
+              </tr>
+            </thead>
+            <tbody>
+                {{#each products}}
+                    <tr>
+                        <th>{{id}}</th>
+                        <th>{{title}}</th>
+                        <th>{{price}}</th>
+                        <th><img src="{{thumbnail}}" alt="{{title}}" class="img-thumbnail" style="max-height: 100px; max-width: 100px;"></th>
+                      </tr>
+                {{/each}}
+            </tbody>
+          </table>
+    {{else}}
+        <p class="alert alert-danger">No hay productos</p>
+    {{/if}}
+    <button type="button" onclick="location.href='../'" class="btn btn-info">Cargar Productos</button>
+</div>
